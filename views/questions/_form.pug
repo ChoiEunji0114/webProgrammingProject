@@ -1,0 +1,30 @@
+.form-group
+  label(for="title") Title
+  input.form-control(type="text", name="title", placeholder="공모전 이름", value=question.title)
+.form-group
+  label(for="question") Contest content 
+  textarea.form-control(name="content", rows="10", placeholder="공모 요강")= question.content
+
+// 추가
+.form-group
+  label(for="sponser") Sponser
+  input.form-control(type="text", name="sponser", placeholder="공모전 주최사", value=question.sponser)
+.form-group
+  label(for="field") Field
+  input.form-control(type="text", name="field", placeholder="공모전 분야", value=question.field)
+.form-group
+  label(for="applicant") Applicant
+  input.form-control(type="text", name="applicant", placeholder="공모전 응시대상", value=question.applicant)
+.form-group
+  label(for="period") Period
+  input.form-control(type="text", name="period", placeholder="공모전 접수 기간", value=question.period)
+.form-group
+  label(for="manager") Manager
+  input.form-control(type="text", name="manager", placeholder="공모전 담당자", value=question.manager)
+.form-group
+  label(for="tel") Tel
+  input.form-control(type="text", name="tel", placeholder="공모전 연락처", value=question.tel)
+
+.form-group
+  label(for="tags") Tags
+  input.form-control(type="text", name="tags", placeholder="태그를 공백으로 구분하여 입력해주세요", value=question.tags ? question.tags.join(" ") : "")
