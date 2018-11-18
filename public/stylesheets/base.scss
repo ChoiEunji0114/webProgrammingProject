@@ -9,6 +9,29 @@ body {
   }
 }
 
+.subtitle { // 우리들의 열정 공간 
+  color : white;
+  font-size: 0.8rem;
+  margin-bottom: 5px;
+  font-family: 'Nanum Gothic';
+}
+
+.title { // wevity 공모전 대외활동 
+  display: flex;
+}
+
+.titleENG { // wevity
+  font-size : 1.8rem;
+  font-family: 'Allerta Stencil', sans-serif;
+  margin-right: 10px;
+}
+
+.titleKOR { // 공모전 대외활동 
+  margin-top: 12px;
+  font-family: 'Nanum Gothic';
+  font-size: 1rem;
+}
+
 a:hover {
   text-decoration: none;
 }
@@ -45,7 +68,11 @@ a:hover {
 }
 
 .header > .navbar {
-  background-color: #011a72!important;
+  // background-color: #011a72!important;
+  // background-color: #8c8c8c!important;
+  background-color: #8c8c8c!important;
+  background-image: linear-gradient(45deg, #336688, #336688 25%, transparent 25%,
+    transparent 50%, #336688 50%, #336688 75%, transparent 75%, transparent);
 }
 
 .search-input-group{
