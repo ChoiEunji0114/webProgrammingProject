@@ -1,14 +1,6 @@
-.content= question.content
+.radio= question.radio
 
-// 추가
-div= question.sponser
-div= question.field
-div= question.applicant
-div= question.period
-div= question.manager
-div= question.tel
-
-.tags.badges
+//.tags.badges
   each tag in question.tags
     span.badge.badge-phill.badge-secondary= tag
     | 
@@ -20,7 +12,8 @@ div= question.tel
       #[span.number.num-reads= question.numReads] reads
   .col-sm
     .author
-      | commented on #{moment(question.createdAt).format('YYYY-MM-DD')}
+      | posted on #{moment(question.createdAt).format('YYYY-MM-DD')}
       if question.author
         | 
         | by #[a(href=`/users/${question.author.id}`)= question.author.name] 
+hr

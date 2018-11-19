@@ -74,6 +74,12 @@ module.exports = io => {
     question.manager = req.body.manager;
     question.tel = req.body.tel;
 
+    // 옵션 선택
+    question.radio = req.body.radio;
+
+    // 포스터 등록 
+    question.poster = req.body.poster;
+
     question.tags = req.body.tags.split(" ").map(e => e.trim());
 
     await question.save();
@@ -101,6 +107,12 @@ module.exports = io => {
       period : req.body.period,
       manager : req.body.manager,
       tel : req.body.tel,
+
+      // 옵션 추가
+      radio : req.body.radio,
+
+      // 포스터 등록
+      poster: req.body.poster,
 
       tags: req.body.tags.split(" ").map(e => e.trim()),
     });

@@ -5,7 +5,16 @@ block content
     h1.main-title= question.title
 
     .question.show
-      .content= question.content
+      .content= "모집 요강  " + question.content
+
+      // 추가
+      .sponser= "주최사  " + question.sponser
+      .field= "분야  " + question.field
+      .applicant= "응시 대상  " + question.applicant  
+      .period= "접수 기간  " + question.period
+      .manager= "담당자  " + question.manager
+      .tel= "연락처  " + question.tel
+
       include _question
 
       .buttons

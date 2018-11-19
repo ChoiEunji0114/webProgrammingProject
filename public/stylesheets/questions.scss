@@ -1,4 +1,6 @@
 .main-title {
+  font-family: 'Nanum Gothic';
+  margin-bottom: 1em;
   .small {
     float: right;
     font-size: 1rem;
@@ -8,16 +10,26 @@
 .question {
   line-height: 160%;
   margin-bottom: 2em;
+  font-family: 'Nanum Gothic';
+  color : #666;
   .title {
     font-size: 1.3rem;
+    margin-bottom: 0.3em;
+    font-weight: bold;
   }
-  .content {
-    color: #666;
+  .radio {
+    color:#F15F5F;
+    font-size: 0.8rem;
   }
   .tags {
     margin: 0.5em 0;
   }
 }
+
+.radioInput{
+  margin : 10px;
+}
+
 
 .author {
   text-align: right;

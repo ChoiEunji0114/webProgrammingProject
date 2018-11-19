@@ -5,7 +5,7 @@
   label(for="question") Contest content 
   textarea.form-control(name="content", rows="10", placeholder="공모 요강")= question.content
 
-// 추가
+// 추가 - 정보 : 이름, 주최사, 분야, 응시대상, 접수기간, 공모요강, 담당자, 연락처
 .form-group
   label(for="sponser") Sponser
   input.form-control(type="text", name="sponser", placeholder="공모전 주최사", value=question.sponser)
@@ -24,6 +24,21 @@
 .form-group
   label(for="tel") Tel
   input.form-control(type="text", name="tel", placeholder="공모전 연락처", value=question.tel)
+
+// 옵션 선택 - 접수중, 마감임박, 마감
+label(for="radio") ContestStatus  
+.form-group
+  input.radioInput(type="radio", name="radio", value="접수중", checked="checked")
+  | 접수중     
+  input.radioInput(type="radio", name="radio", value="마감임박")
+  | 마감임박     
+  input.radioInput(type="radio", name="radio", value="마감")
+  | 마감 
+
+// 공모전 포스터 등록
+label(for="poster") Poster
+.form-group
+  input.form-control(type="file", name="poster", accept="image/gif, image/jpeg, imgage/png, image/pdf")
 
 .form-group
   label(for="tags") Tags

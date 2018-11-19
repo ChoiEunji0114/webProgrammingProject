@@ -14,6 +14,12 @@ var schema = new Schema({
   period : {type:String, trim:true, required:true},
   manager : {type:String, trim:true, required:true},
   tel : {type:String, trim:true, required:true},
+
+  // 옵션 선택
+  radio : {type:String, trim: true, required:true},
+
+  // 공모전 포스터 등록 
+  poster : {type:Buffer, required:true},
   
   tags: [String],
   numLikes: {type: Number, default: 0},
