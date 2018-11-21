@@ -78,7 +78,7 @@ module.exports = io => {
     question.radio = req.body.radio;
 
     // 포스터 등록 
-    question.poster = req.body.poster;
+    // question.poster = req.body.poster;
 
     question.tags = req.body.tags.split(" ").map(e => e.trim());
 
@@ -112,7 +112,7 @@ module.exports = io => {
       radio : req.body.radio,
 
       // 포스터 등록
-      poster: req.body.poster,
+      // poster: req.body.poster,
 
       tags: req.body.tags.split(" ").map(e => e.trim()),
     });

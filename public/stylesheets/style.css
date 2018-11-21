@@ -115,14 +115,21 @@ a:hover {
     font-size: 1.3rem;
     margin-bottom: 0.3em;
     font-weight: bold; }
-  .question .radio {
-    color: #F15F5F;
-    font-size: 0.8rem; }
-  .question .tags {
-    margin: 0.5em 0; }
 
 .radioInput {
   margin: 10px; }
+
+.row {
+  margin-bottom: 10px; }
+  .row .col-2 {
+    color: #0D3FA5;
+    font-family: 'Nanum Gothic';
+    font-size: 1.1em; }
+  .row .col-10 {
+    font-family: 'Nanum Gothic'; }
+  .row .col {
+    color: #CC3D3D;
+    font-family: 'Nanum Gothic'; }
 
 .author {
   text-align: right;

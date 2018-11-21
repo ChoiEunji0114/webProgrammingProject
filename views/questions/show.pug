@@ -4,16 +4,32 @@ block content
   .container
     h1.main-title= question.title
 
-    .question.show
-      .content= "모집 요강  " + question.content
+    .container
+        .row
+          .col-2="모집요강"
+          .col-10=question.content
 
-      // 추가
-      .sponser= "주최사  " + question.sponser
-      .field= "분야  " + question.field
-      .applicant= "응시 대상  " + question.applicant  
-      .period= "접수 기간  " + question.period
-      .manager= "담당자  " + question.manager
-      .tel= "연락처  " + question.tel
+        // 추가 정보 
+        .row
+          .col-2="주최사"
+          .col-10=question.sponser
+        .row
+          .col-2="분야"
+          .col-10=question.field
+        .row
+          .col-2="응시 대상"
+          .col-10=question.applicant
+        .row
+          .col-2="접수 기간"
+          .col-10=question.period
+        .row
+          .col-2="담당자"
+          .col-10=question.manager
+        .row
+          .col-2="연락처"
+          .col-10=question.tel
+
+    .question.show
 
       include _question
 

@@ -19,7 +19,7 @@ var schema = new Schema({
   radio : {type:String, trim: true, required:true},
 
   // 공모전 포스터 등록 
-  poster : {type:Buffer, required:true},
+  // poster : {type:String, required:true},
   
   tags: [String],
   numLikes: {type: Number, default: 0},

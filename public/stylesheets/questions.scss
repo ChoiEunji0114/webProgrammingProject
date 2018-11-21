@@ -17,17 +17,27 @@
     margin-bottom: 0.3em;
     font-weight: bold;
   }
-  .radio {
-    color:#F15F5F;
-    font-size: 0.8rem;
-  }
-  .tags {
-    margin: 0.5em 0;
-  }
 }
 
 .radioInput{
   margin : 10px;
+}
+
+.row {
+  margin-bottom: 10px;
+  .col-2{
+    color : #0D3FA5;
+    font-family: 'Nanum Gothic';
+    font-size : 1.1em;
+  }
+  .col-10{
+    font-family: 'Nanum Gothic';
+  }
+  .col{
+    color: #CC3D3D;
+    font-family: 'Nanum Gothic';
+    // margin-left:12px;
+  }
 }
 
 
