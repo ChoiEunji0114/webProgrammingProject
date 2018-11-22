@@ -116,6 +116,9 @@ a:hover {
     margin-bottom: 0.3em;
     font-weight: bold; }
 
+form.form-inline.search-input-group {
+  margin-top: 30px; }
+
 .radioInput {
   margin: 10px; }
 
