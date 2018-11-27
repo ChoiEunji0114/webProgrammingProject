@@ -116,6 +116,12 @@ a:hover {
     margin-bottom: 0.3em;
     font-weight: bold; }
 
+.col-md-2 {
+  margin-top: 7px;
+  font-size: 1.2em;
+  font-family: 'Nanum Gothic';
+  color: #666; }
+
 form.form-inline.search-input-group {
   margin-top: 30px; }
 

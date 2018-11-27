@@ -29,8 +29,10 @@ block content
           .col-2="연락처"
           .col-10=question.tel
 
+    // 이미지 보여주기 
     .question.show
-
+      if question.img
+        img.img-fluid(src=question.img)
       include _question
 
       .buttons

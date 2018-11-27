@@ -3,6 +3,11 @@ const Question = require('../models/question');
 const Answer = require('../models/answer'); 
 const catchErrors = require('../lib/async-error');
 
+// 추가 - multer middleware
+const multer = require('multer');
+const fs = require('fs-extra');
+const path = require('path');
+
 
 module.exports = io => {
   const router = express.Router();
@@ -93,6 +98,60 @@ module.exports = io => {
     res.redirect('/questions');
   }));
 
+
+  // 추가 - multer middleware 
+  const mimetypes = {
+    "image/jpeg" : "jpg",
+    "image/gif" : "gif",
+    "image/png" : "png"
+  };
+  const upload = multer({
+    dest:'tmp',
+    fileFilter:(req, file, cb) => {
+      var ext = mimetypes[file.mimetype];
+      if(!ext) {
+        return cb(new Error('Only image files are allowed!'), false);
+      }
+      cb(null, true);
+    }
+  });
+
+  // 추가 - 이미지 등록 
+  router.post('/', needAuth, 
+        upload.single('img'), // img 라는 필드를 req.file 로 저장
+        catchErrors(async (req, res, next) => {
+      var question = new Question({
+        title: req.body.title,
+        author: req.user._id,
+        content: req.body.content,
+
+        // 추가
+        sponser : req.body.sponser,
+        field : req.body.field,
+        applicant : req.body.applicant,
+        period : req.body.period,
+        manager : req.body.manager,
+        tel : req.body.tel,
+
+        // 옵션 추가
+        radio : req.body.radio,
+
+        tags: req.body.tags.split(" ").map(e => e.trim()),
+      });
+      if(req.file) {
+        const dest = path.join(__dirname, '../public/images/uploads');
+        console.log("File ->", req.file); // multer 의 output 
+        const filename = req.file.filename + "." + mimetypes[req.file.mimetype];
+        await fs.move(req.file.path, dest + filename);
+        question.img = "/images/uploads" + filename;
+      }
+      await question.save();
+      req.flash('success', 'Successfully posted');
+      res.redirect('/questions');
+    }));
+
+
+  /*
   router.post('/', needAuth, catchErrors(async (req, res, next) => {
     const user = req.user;
     var question = new Question({
@@ -119,7 +178,7 @@ module.exports = io => {
     await question.save();
     req.flash('success', 'Successfully posted');
     res.redirect('/questions');
-  }));
+  }));*/
 
   router.post('/:id/answers', needAuth, catchErrors(async (req, res, next) => {
     const user = req.user;

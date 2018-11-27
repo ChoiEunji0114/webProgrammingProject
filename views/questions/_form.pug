@@ -36,9 +36,13 @@ label(for="radio") ContestStatus
   | 마감 
 
 // 공모전 포스터 등록
-label(for="poster") Poster
-.form-group
+//label(for="poster") Poster
+//.form-group
   input.form-control(type="file", name="poster", accept="image/gif, image/jpeg, imgage/png, image/pdf")
+
+.form-group
+  label(for='img') Image
+  input.form-control(type="file", name="img")
 
 .form-group
   label(for="tags") Tags

@@ -21,6 +21,8 @@ var schema = new Schema({
   // 공모전 포스터 등록 
   // poster : {type:String, required:true},
   
+  img:{type:String}, // 이미지 path 저장하기 위해 추가
+  
   tags: [String],
   numLikes: {type: Number, default: 0},
   numAnswers: {type: Number, default: 0},
