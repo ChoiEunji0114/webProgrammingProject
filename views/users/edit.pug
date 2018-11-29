@@ -10,6 +10,15 @@ block content
       .form-group
         label(for='email') Email address
         input.form-control(type='email', id='email', name='email', placeholder='Email', value=user.email)
+
+      // 추가 - 사용자 모드 체크 
+      //label(for='isManager') userMode
+      //.form-group
+        input.radioInput(type='radio', name="userMode", value="일반 사용자", checked="checked")
+        | 일반 사용자
+        input.radioInput(type='radio', name="userMode", value="관리자")
+        | 관리자 
+
       .form-group
         label(for='current_password') Current Password
         input.form-control(type='password', id='current_password', name='current_password', placeholder='Current Password')
