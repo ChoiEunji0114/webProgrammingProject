@@ -8,7 +8,7 @@ var schema = new Schema({
   email: {type: String, required: true, index: true, unique: true, trim: true},
 
   // 관리자 모드 추가 - 디폴트 : 일반 사용자 
-  userMode : {type: String, default:"일반 사용자"},
+  userMode : {type: String, default:"일반사용자"},
 
   password: {type: String},
   facebook: {id: String, token: String, photo: String},

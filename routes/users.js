@@ -3,12 +3,34 @@ const User = require('../models/user');
 const router = express.Router();
 const catchErrors = require('../lib/async-error');
 
+/*
 function needAuth(req, res, next) {
   if (req.isAuthenticated()) {
     next();
   } else {
-    req.flash('danger', 'Please signin first.');
+    req.flash('danger', 'signin first');
     res.redirect('/signin');
+  }
+}*/
+
+// 관리자 권한 확인 
+async function needAuth(req, res, next) {
+  try {
+    if (req.isAuthenticated()) {
+      console.log(req.user)
+      if(req.user.userMode == "관리자"){
+        req.flash('success', 'welcome!');
+        next();
+      } else {
+        req.flash('danger', '관리자 모드로 다시 로그인해주세요');
+        res.redirect('/signin');
+      }
+    } else {
+      req.flash('danger', '로그인이 필요한 서비스입니다');
+      res.redirect('/signin');
+    }
+  } catch(err){
+    console.log(err);
   }
 }
 
